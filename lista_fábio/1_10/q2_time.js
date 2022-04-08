@@ -1,4 +1,4 @@
-import {print , input} from '../utils.js'
+import {print , input} from '../../utils.js'
 function main(){
     //start
     print('conversor de horas/minutos para minutos')

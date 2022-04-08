@@ -1,4 +1,4 @@
-import {print , input} from '../utils.js'
+import {print , input} from '../../utils.js'
 function main(){
     //start 
     print('soma dos elementos de um número inteiro de 3 digitos (c + d + u) ')
