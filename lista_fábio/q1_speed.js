@@ -6,6 +6,6 @@ function main(){
     // process
     speed_ms *= 3.6
     // output
-    print(`feita a conversão: ${speed_ms} km/h`)
+    print(`feita a conversão: ${speed_ms.toFixed(2)} km/h`)
 }
 main()
