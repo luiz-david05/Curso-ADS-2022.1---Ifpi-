@@ -1,12 +1,12 @@
-const input = require ('prompt-sync')()
-
-//inicio 
-console.log('conversor de horas/minutos para minutos')
-let hrs = Number(input('horas: '))
-let mins = Number(input('minutos: '))
-
-// processo 
-hrs *= 60 + mins 
-
-//saida 
-console.log(`feita a conversão: ${hrs} minuto(s)`)
+import {print , input} from '../utils.js'
+function main(){
+    //start
+    print('conversor de horas/minutos para minutos')
+    let hrs = Number(input('horas: '))
+    const mins = Number(input('minutos: '))
+    // process
+    const mins_convert = (hrs * 60 + mins)
+    //output
+    print(`feita a conversão: ${mins_convert} minuto(s)`)
+}    
+main()
