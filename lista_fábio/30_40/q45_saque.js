@@ -33,6 +33,7 @@ function main(){
     print(`quantidade de notas de 20 R$: ${nota_20}`)
     print(`quantidade de notas de 10 R$: ${nota_10}`)
     print(`quantidade de notas de 5 R$: ${nota_5}`)
+    print(`quantidade de notas de 2 R$: ${nota_2}`)
     print(`quantidade de moedas de 1 R$: ${moedas_1real}`)
 
 }main()

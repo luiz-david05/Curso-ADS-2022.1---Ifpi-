@@ -7,7 +7,6 @@ Assuma que cada nota pode ir de 0 até 10.0, sempre com uma casa decimal.*/
 import {input} from '../utils.js'
 function main(){
     //entradas
-    console.log('calcular media ponderada')
     const nota1 = Number(input('nota 1: '))
     const nota2 = Number(input('nota 2: '))
     //processo
