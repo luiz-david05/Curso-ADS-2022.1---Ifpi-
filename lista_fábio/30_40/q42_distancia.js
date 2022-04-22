@@ -5,10 +5,8 @@ import {print,input} from '../../utils.js'
 function main(){
     //entradas
     print(`calcular a distãncia entre dois pontos quaisquer no plano cartesiano `)
-    const x1 = Number(input('valor de x1: '))
-    const y1 = Number(input('valor de y1: '))
-    const x2 = Number(input('valor de x2: '))
-    const y2 = Number(input('valor de y2: '))
+    const [x1, y1] = input('x1 e y1: ').split(" ").map(Number)
+    const [x2, y2] = input('x2 e y2: ').split(" ").map(Number)
     //processo
     const parcial = Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2)
     const distancia = Math.sqrt(parcial) 
