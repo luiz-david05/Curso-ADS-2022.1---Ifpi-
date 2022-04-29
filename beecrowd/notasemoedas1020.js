@@ -28,7 +28,6 @@ function main(){
     const moedas_5 = Math.trunc(resto / 0.5)
     resto = resto % 0.5
     const moedas_01 = Math.trunc(resto)
-    resto = resto % 0.1
     //saidas
     console.log(`NOTAS:`)
     console.log(`${nota_100} nota(s) de R$ 100,00`)
