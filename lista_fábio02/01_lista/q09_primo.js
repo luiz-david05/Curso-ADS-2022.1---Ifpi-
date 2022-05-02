@@ -8,7 +8,7 @@ function main (){
 }
 main()
 function e_primo (n){
-    if( n / n ===  1 && n / 1 === n && n != 1 ){
+    if( n % n ===  1 && n % 1 === n ){
         return 'é primo'
     }
     else{
