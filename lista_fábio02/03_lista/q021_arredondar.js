@@ -12,7 +12,7 @@ function arredondar(a, b){
         fracionaria ++
         console.log(`Número arredondado: ${inteira}.${fracionaria}`)
     }else{
-        console.log(`${inteira}`)
+        console.log(`Número arredondao: ${inteira}`)
     }
 } 
     
