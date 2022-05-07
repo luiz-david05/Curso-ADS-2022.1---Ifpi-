@@ -4,10 +4,9 @@ function main(){
     const what_is = vogal(letra)
 }
 main()
-function vogal(letter){
-    let vogais = ['a', 'e', 'i', 'o', 'u']
-    if(letter === vogais){ 
-        console.log(`${letter} é vogal`)
+function vogal(letter){ 
+    if(letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u'){
+        console.log(`${letter} é vogal!`)
     }else{
         console.log(`${letter} é consoante!`)
     }
