@@ -6,10 +6,9 @@ function main(){
 }
 main()
 function inteiro (n){
-     if(n % 1 === 0){
-         console.log(`${n} é inteiro`)
-     }else{
-         console.log(`${n} é decimal`)
-
-     }
+    if(n % 1 === 0){
+    console.log(`${n} é inteiro`)
+    }else{
+    console.log(`${n} é decimal`)
+    }
 }
