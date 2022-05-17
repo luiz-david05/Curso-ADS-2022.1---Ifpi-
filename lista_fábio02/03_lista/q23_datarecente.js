@@ -9,7 +9,7 @@ function main(){
 }
 main()
 function data_recente(dia,mes,ano,dia_2,mes_2,ano_2){
-    if(dia < dia_2 && mes < mes_2 && ano < ano_2){
+    if(ano > ano_2){
         console.log(`data mais recente: ${dia}/${mes}/${ano}`)
     }else{
         console.log(`data mais recente: ${dia_2}/${mes_2}/${ano_2}`)

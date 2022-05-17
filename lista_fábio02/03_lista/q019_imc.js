@@ -1,25 +1,24 @@
 import { input } from '../../utils.js'
 function main(){
-    const altura = Number(input('altura em metros: '))
     const peso = Number(input('peso em kilogramas: '))
-    const imc = calcular_imc(altura, peso)
+    const altura = Number(input('altura em metros: '))
+    const imc = calcular_imc(peso, altura)
 }main()
-function calcular_imc (n1, n2){
-    const indice_massa = n2 / (quadrado(n1))
+function calcular_imc (peso, altura){
+    let faixa
+    const indice_massa = peso / (altura * altura)
     if(indice_massa <= 18.5){
-        console.log(`${indice_massa.toFixed(1)} Abaixo do peso!`)
+        faixa = 'Abaixo do peso'
     }else if(indice_massa >= 18.5 && indice_massa <= 24.9){
-        console.log(`${indice_massa.toFixed(1)} Peso normal!`)
+        faixa = 'Peso ideal'
     }else if(indice_massa >= 25 && indice_massa <= 29.9){
-        console.log(`Sobrepeso!`)
+        faixa = 'Acima do peso'
     }else if(indice_massa >= 30 && indice_massa <= 34.9){
-        console.log(`${indice_massa.toFixed(1)} Obesidade grau 1!`)
+        faixa = 'Obesidade grau 1!'
     }else if(indice_massa >= 35 && indice_massa <= 39.9){
-        console.log(`${indice_massa.toFixed(1)}Obesidade grau 2!`)
+        faixa = 'Obesidade grau 2!'
     }else if(indice_massa > 40){
-        console.log(`${indice_massa.toFixed(1)} Obesidade grau 3!`)
+        faixa = 'Obesidade grau 3!'
     }
-}
-function quadrado(n){
-    return n * n 
+    console.log(`Imc: ${indice_massa.toFixed(1)}\nfaixa: ${faixa}`)
 }

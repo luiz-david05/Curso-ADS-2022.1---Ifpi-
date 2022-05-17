@@ -1,16 +1,12 @@
 import {input} from '../../utils.js'
-
 function main(){
-    const n = input('digite o número decimal: ').split('.').map(Number)
-    const numero_arredondado = arredondar(n)
-    console.log(`Número_arredondado: ${numero_arredondado}`)
+    const numero = input('Número para arredondar: ')
+    let [int, fra] = numero.split('.').map(Number)
+    if(fra >= 5){
+        int ++ 
+    }else{
+        int 
+    }
+    console.log(`Número arredondado: ${int}`)
 }
 main()
-function arredondar(n){
-    let inteira = n[0]
-    let fracionada = n[1]
-    if(fracionada >= 5) fracionada += 1
-    {
-        return inteira }
-
-}
