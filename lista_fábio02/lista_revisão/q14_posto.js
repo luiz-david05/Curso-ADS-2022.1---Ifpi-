@@ -11,36 +11,32 @@
 import {input} from '../../utils.js'
 
 function main(){
-    const type_fuel = input('Tipo de combustível. A para Álcool e  G para Gasolina: ')
+    console.log('[1] para Álcool e  [2] para Gasolina:')
+    const type_fuel = Number(input('Tipo de combustível: '))
     const qtd_litros = Number(input('Quantidade de litros: '))
     const pagar = Verificar_typefuel(type_fuel, qtd_litros)
 }
 main()
 function Verificar_typefuel(fuel,litro){
     let custo, desconto,total
-    if(fuel === 'G' && litro <= 20){
-        custo = litro * 2.50
-        desconto = custo * (4 / 100) 
-        total = custo - desconto
-        console.log(`Desconto: R$ ${desconto.toFixed(2)}\nTotal a pagar: R$ ${total.toFixed(2)}`)
-    }else if(fuel === 'G' && litro > 20){
-        custo = litro * 2.50
-        desconto = custo * (6 / 100)
-        total = custo - desconto
-        console.log(`Desconto: R$ ${desconto.toFixed(2)}\nTotal a pagar: R$ ${total.toFixed(2)}`)
-    }
-
-    if(fuel === 'A' && litro <= 20){
+    
+    if(fuel === 1 && litro <= 20){
         custo = litro * 1.90
         desconto = custo * (3 / 100)
         total = custo - desconto
-        console.log(`Desconto: R$ ${desconto.toFixed(2)}\nTotal a pagar: R$ ${total.toFixed(2)}`)
-    }else if(fuel === 'A' && litro > 20){
+    }else if(fuel === 1 && litro > 20){
         custo = litro * 1.90
         desconto = custo * (5 / 100)
         total = custo - desconto
-        console.log(`Desconto: R$ ${desconto.toFixed(2)}\nTotal a pagar: R$ ${total.toFixed(2)}`)
     }
-        
-    
+    if(fuel === 2 && litro <= 20){
+        custo = litro * 2.50
+        desconto = custo * (4 / 100) 
+        total = custo - desconto
+    }else if(fuel === 2 && litro > 20){
+        custo = litro * 2.50
+        desconto = custo * (6 / 100)
+        total = custo - desconto
+    }
+    console.log(`Total: ${custo.toFixed(2)}\nDesconto: R$ ${desconto.toFixed(2)}\nTotal a pagar: R$ ${total.toFixed(2)}`)
 }

@@ -8,9 +8,10 @@ main()
 function calcular_aumento(salario){
     let aumento, percentual, novo_salario
     if(salario <= 280 ){
-        aumento = salario * 0.2
+        aumento = salario * (2 /  100)
         novo_salario = aumento + salario
         percentual = '20%'
-        console.log(` salário antes do aumento: ${salario.toFixed(2)}R$\n percentual do aumento aplicado: ${percentual}\n o valor do aumento: ${aumento.toFixed(2)}R$\n novo salário, após o aumento: ${novo_salario.toFixed(2)}R$`)
+    }else if(salario > 280){
+        
     }
 }
