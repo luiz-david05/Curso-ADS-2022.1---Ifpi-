@@ -1,10 +1,11 @@
 import {input} from '../utils.js'
 function main(){
-const qtd = Number(input('digite: ').split(" ")[1])
-const preço = Number(input[0].split(" ")[2])
-const qtd_2 = Number(lines[1].split(" ")[1])
-const preço_2 = Number(lines[1].split(" ")[2])
+const qtd = Number(lines[0]).split(" ")
+const preço = Number(lines[0]).split(" ")
+const qtd_2 = Number(lines[1]).split(" ")
+const preço_2 = Number(lines[1]).split(" ")
 let total = qtd * preço
 total += qtd_2 * preço_2
 console.log(`VALOR A PAGAR: R$ ${(total).toFixed(2)}`)
-}main()
+}
+main()
