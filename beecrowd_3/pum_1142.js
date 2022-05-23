@@ -11,4 +11,3 @@ function main(){
     }
 }
 main()
-// entender a lógica depois

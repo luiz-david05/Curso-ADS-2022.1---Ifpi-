@@ -6,7 +6,11 @@ function main(){
     //process 
     let hrs = Math.trunc (mins/60)
     let hrs_mins = mins % 60
+    if(hr > 1){
+        print(`feita a conversão: ${hrs} hora ${hrs_mins} minutos`)
+    }else{
+        print(`feita a conversão: ${hrs} horas e ${hrs_mins} minutos`)
+    }
     //output
-    print(`feita a conversão: ${hrs} hora(s) e ${hrs_mins} minuto(s)`)
 }
 main()
