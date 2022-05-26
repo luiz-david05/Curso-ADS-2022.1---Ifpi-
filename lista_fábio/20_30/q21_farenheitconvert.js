@@ -6,7 +6,7 @@ function main(){
     print('conversor graus °F ==> °C')
     const fahrenheit = Number (input('Digite a tempertura em fahrenheit: '))
     //process
-    const celsius = (( 5 * fahrenheit - 160) /9)
+    const celsius = ( 5 * fahrenheit - 160) /9
     //output
     print(`resultado: ${celsius.toFixed(1)} °C`)  
 }

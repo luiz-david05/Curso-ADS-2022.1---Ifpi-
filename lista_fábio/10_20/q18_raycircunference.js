@@ -7,7 +7,7 @@ function main(){
     //process
     const c = 2 * PI * ray
     //output
-    print(`o comprimento do raio é: ${c.toFixed(1)}  `) 
+    print(`comprimento do raio = ${c.toFixed(1)}  `) 
 
 } 
 main()

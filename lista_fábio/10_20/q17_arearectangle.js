@@ -7,7 +7,7 @@ function main(){
     //processo
     const area = base * height
     //output
-    print(`a àrea desse retângulo é: ${area}`)
+    print(`Area = ${area}`)
 
 }
 main()

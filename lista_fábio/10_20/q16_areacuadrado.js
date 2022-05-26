@@ -4,7 +4,7 @@ function main(){
     print('calcular a área de um quadrado')
     let side = Number(input('digite o valor do lado: '))
     //process
-    side *= side 
+    let ao_quadrado = Math.pow(side, 2) 
     //output
     print(`a área desse quadrado é: ${side}`)
 }

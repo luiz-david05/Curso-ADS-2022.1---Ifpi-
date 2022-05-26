@@ -5,7 +5,7 @@ function main(){
     //entradas
     const segundos = Number(input('digite os segundos: '))
     //processo
-    const n_s = 36 * 100
+    const n_s = 3600
     const horas = segundos / n_s
     const minutos = (segundos / 60) % 60 
     const resto_segundos = segundos % 60
