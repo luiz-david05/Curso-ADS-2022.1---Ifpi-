@@ -1,27 +1,35 @@
-import {input} from '../utils.js'
-// questão 1041 do becroowd
+import fs from 'fs';
+const input = fs.readFileSync('1041.txt', 'utf8')
+var lines = input.split('\n');
 
 function main(){
-    const entradas = input('x, y: ')
-    const [x, y] = entradas.split('').map(Number)
-    const result = verificacao_quadrantes(x,y)
+    const [x, y] = lines[0].split(' ').map(Number)
+    const quadrantes = verificar_quadrantes(x,y)
 }
 main()
 
-function verificacao_quadrantes(x, y){
-    if(x === 0 && y === 0){
-        console.log('Origem')
+function verificar_quadrantes(x, y){
+    if(x === 0){
+        if(y === 0){
+            console.log('Origem')
+        }else{
+            console.log('Eixo Y')
+        }
     }else if(y === 0){
-        console.log('Eixo y')
-    }else if(x === 0){
-        console.log('Eixo x')
-    }else if(x > 0 && y > 0){
-        console.log('Q1')
-    }else if(x < 0 && y > 0){
-        console.log('Q2')
-    }else if(x < 0 && y < 0){
-        console.log('Q3')
-    }else if(x > 0 && y < 0){
-        console.log('Q4')
+        if(x !== 0){
+            console.log('Eixo X')
+        }
+    }else if(x > 0){
+        if(y > 0){
+            console.log('Q1')
+        }else{
+            console.log('Q4')
+        }
+    }else if(x < 0){
+        if(y > 0){
+            console.log('Q2')
+        }else{
+            console.log('Q3')
+        }
     }
 }

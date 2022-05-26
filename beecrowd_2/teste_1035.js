@@ -1,28 +1,16 @@
-import {input} from '../utils.js'
+import fs from 'fs';
+const input = fs.readFileSync('1035.txt', 'utf8')
+var lines = input.split('\n');
+
 
 function main(){
-    const [a, b, c, d] = input('a, b, c, d: ').split(' ').map(Number)
-    const soma = c + d
-    const soma_2 = a + b
-    if(b > c && d < a && soma > soma_2 && positivo(c) && positivo(d)
-    && par(a)){
-        console.log('Valores aceitos')
-    }else{
-        console.log('Valores nao aceitos')
-    }
+    const [a,b,c,d] = lines[0].split(' ').map(Number)
+    const resultado_teste = teste_de_selecao(a, b, c, d)
+    resultado_teste === true ?
+    console.log('Valores aceitos') :
+    console.log('Valores nao aceitos')
 }
 main()
-function positivo(n){
-    if(n % 1 === 0){
-        return true
-    }else{
-        return false
-    }
-}
-function par(n){
-    if(n % 2 === 0){
-        return true
-    }else{
-        return false
-    }
+function teste_de_selecao(a, b, c, d){
+    return b > c && d > a && (c + d) > (a + b) && c > 0 && d > 0 && a % 2 === 0
 }

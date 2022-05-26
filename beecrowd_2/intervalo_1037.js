@@ -1,22 +1,25 @@
-import {input} from '../utils.js'
+import fs from 'fs';
+const input = fs.readFileSync('1037.txt', 'utf8')
+var lines = input.split('\n');
 
 function main(){
-    const entrada = Number(input('valor: ')
-    )
-    const result = intervalo(entrada)
+    const valor = Number(lines[0])
+    const na_faixa = intervalo(valor)
+    console.log(na_faixa)
 }
 main()
-
-function intervalo(valor){
-    if (valor < 0 || valor > 100){
-        console.log('Fora de intervalo')  
-    }else if(valor <= 25){
-        console.log('Intervalo [0,25]')
-    }else if (valor <= 50){
-        console.log('Intervalo (25,50]')
-    }else if(valor <= 75){
-        console.log('Intervalo (50,75]')
+function intervalo(v1){
+    let faixa
+    if(v1 >= 0 && v1 <= 25  ){
+        faixa = 'Intervalo [0,25]'
+    }else if(v1 > 25 && v1 <= 50){
+        faixa = 'Intervalo (25,50]'
+    }else if(v1 > 50 && v1 <= 75){
+        faixa = 'Intervalo (50,75]'
+    }else if(v1 > 75 && v1 <= 100){
+        faixa = 'Intervalo (75,100]'
     }else{
-        console.log('Intervalo (75,100]')
+        faixa = 'Fora de intervalo'
     }
+    return faixa
 }

@@ -7,6 +7,9 @@ function main(){
     // process
     const mins_convert = (hrs * 60 + mins)
     //output
-    print(`feita a conversão: ${mins_convert} minuto(s)`)
+    mins_convert > 1 ? 
+    print(`feita a conversão: ${mins_convert} minutos`) :
+    print(`feita a conversão: ${mins_convert} minuto`) 
+    
 }    
 main()

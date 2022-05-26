@@ -1,33 +1,31 @@
-import {input} from '../utils.js'
-// questão média 3 bee1040
+import fs from 'fs';
+const input = fs.readFileSync('1040.txt', 'utf8')
+var lines = input.split('\n');
 function main(){
-    const n1 = Number(input('Primeira nota: '))
-    const n2 = Number(input('Segunda nota: '))
-    const n3 = Number(input('Terceira nota: '))
-    const n4 = Number(input('Quarta nota: '))
-    const result = mediap(n1, n2, n3, n4)
+    const [n1, n2, n3, n4] = lines[0].split(' ').map(Number)
+    const diario = boletim(n1, n2, n3, n4)
 }
 main()
-function mediap(n1, n2, n3, n4){
-    const soma = (n1*2) + (n2 * 3) + (n3 * 4) + (n4 * 1)
-    const media_ponderada = soma / 10
-    if(media_ponderada >= 7.0 ){
-        console.log(`Media: ${media_ponderada.toFixed(1)}`)
+function boletim(n1, n2, n3, n4){
+    let nota_exame, media_final, media
+    media = (n1 * 2 + n2 * 3 + n3 * 4 + n4 * 1) / 10
+    console.log(`Media: ${media.toFixed(1)}`)
+    if(media >= 7.0){
         console.log('Aluno aprovado.')
-    }else if(media_ponderada < 5.0){
-        console.log(`Media: ${media_ponderada.toFixed(1)}`)
+    }else if(media < 5.0){
         console.log('Aluno reprovado.')
-    }else{
-            console.log(`Media: ${media_ponderada.toFixed(1)}`)
-            console.log('Aluno em exame.')
-            const nota_exame = Number(input('Nota do exame: '))
-            const media_exame = (media_ponderada + nota_exame) / 2
-        if (media_exame >= 5.0){
-            console.log('Aluno Aprovado.') 
-            console.log(`Media final: ${media_exame. toFixed(1)}`)
+    }else if(media >= 5.0 && media <= 6.9){
+        console.log('Aluno em exame.')
+        nota_exame = Number(lines[1])
+        console.log(`Nota do exame: ${nota_exame.toFixed(1)}`)
+        media_final = (media + nota_exame) / 2
+        if(media_final >= 5){
+            console.log('Aluno aprovado.')    
+            console.log(`Media final: ${media_final.toFixed(1)}`)
         }else{
             console.log('Aluno reprovado.')
-            console.log(`Media final: ${media_exame.toFixed(1)}`)
+            console.log(`Media final: ${media_final.toFixed(1)}`)
         }
     }
-    }
+}
+

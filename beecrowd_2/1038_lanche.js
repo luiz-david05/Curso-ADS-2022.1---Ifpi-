@@ -1,18 +1,26 @@
-import {input} from '../utils.js'
+import fs from 'fs';
+const input = fs.readFileSync('1038.txt', 'utf8')
+var lines = input.split('\n');
+
+
 function main(){
-    const codigo = Number(input('codigo: '))
-    const qtd = Number(input('quantidade: '))
-    const valor_a_pagar = lanche(codigo, qtd)
-    console.log(`Total: R$ ${valor_a_pagar.toFixed(2)}`)
+    const [cod, qtd] = lines[0].split(' ').map(Number)
+    const total = pedido(cod, qtd)
+    console.log(`Total: R$ ${total.toFixed(2)}`)
 }
 main()
-function lanche(codigo, qtd){
-    let total 
-    if(codigo === 1) total = qtd * 4
-    else if(codigo === 2) total = qtd * 4.5
-    else if(codigo === 3) total = qtd * 5
-    else if(codigo === 4) total = qtd * 2
-    else if(codigo === 5) total = qtd * 1.5
+function pedido(cod, qtd){
+    let total
+    if(cod === 1){
+       total = qtd * 4.0
+    }else if(cod === 2){
+       total = qtd * 4.50
+    }else if(cod === 3){
+       total = qtd * 5.0
+    }else if(cod === 4){
+        total = qtd * 2.0
+    }else{
+       total = qtd * 1.50
+    }
     return total
-
 }

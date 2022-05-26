@@ -1,6 +1,8 @@
-import {input} from '../utils.js'
+import fs from 'fs';
+const input = fs.readFileSync('ehmaior.txt', 'utf8')
+var lines = input.split('\n');
 function main(){
-    const [a, b, c] = input('').split(" ").map(Number)
-    const resultado = Math.max(a, b, c)
-    console.log(`${resultado} é o maior`)
+    const [a, b, c] = lines[0].split(" ").map(Number)
+    const maior = Math.max(a, b, c)
+    console.log(`${maior} eh o maior`)
 }main()
