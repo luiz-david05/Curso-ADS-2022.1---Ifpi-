@@ -4,15 +4,14 @@ import {input} from '../../utils.js'
 
 function main(){
     const n = Number(input('número: '))
-    const verificar = par_impar(n)
-    console.log(verificar)
+    const n_verificado = eh_par(n)
+    if(n_verificado === true){
+        console.log(`[${n}] é par`)
+    }else{
+    console.log(`[${n}] é ímpar`)
+    }
 }
 main()
-function par_impar (n){
-    if(n % 2 === 0){
-        return 'é par'
-    }
-    else{
-        return 'é ímpar'
-    }
+function eh_par(n){
+    return n % 2 === 0
 }

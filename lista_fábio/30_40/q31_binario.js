@@ -2,15 +2,25 @@
 import {print,input} from '../../utils.js'
 function main(){
     //entradas
-    print('digite o número na base binária de 4 dígitos (um por vez).')
-    const b_1 = Number(input('número binário(1° dígito): '))
-    const b_2 = Number(input('número binário(2° dígito): '))
-    const b_3 = Number(input('número binário(3° dígito): '))
-    const b_4 = Number(input('número binário(4° dígito): '))
-    //processo
-    const decimal = (b_1 * Math.pow(2,3)) + b_2 * Math.pow(2,2) +
-    b_3 * Math.pow (2,1) + b_4 * Math.pow (2,0)
+    print('digite o número de 4 dígitos na base binária.')
+    let numero = input('Numero: ')
+    const decimal = binario_decimal(numero)
     //saida
-    print(`na base decimal: ${decimal}`)  
-
+    // ainda não sei verificar arrays totalmente  
+    if(numero <= 1111){
+        print(`na base decimal: ${decimal}`)
+    }else{
+        print(`${numero} inválido, digite apenas 4 digitos na base binária.`)
+    }
 }main()
+function binario_decimal(numero){
+    let decimal = 0
+    let valor_digito
+    for(let i = 0; i < 4 ;){
+        valor_digito =  (2 ** (3 - i)) * Number(numero[i])
+        decimal = decimal + valor_digito
+        i++
+    }
+    return decimal
+}
+

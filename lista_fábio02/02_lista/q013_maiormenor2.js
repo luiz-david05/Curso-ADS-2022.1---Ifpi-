@@ -5,14 +5,17 @@ import {input} from '../../utils.js'
 function main (){
     const numeros = input('digite os 5 números: ')
     const [n1, n2, n3, n4, n5] = numeros.split(' ').map(Number)
-    const maior = verificar_maior(n1, n2, n3, n4, n5)
-    const menor = verificar_menor(n1, n2, n3, n4, n5)
+    const maior = Math.max(n1, n2, n3, n4, n5)
+    const menor = Math.min(n1, n2, n3, n4, n5)
+   // const maior = verificar_maior(n1, n2, n3, n4, n5)
+    // const menor = verificar_menor(n1, n2, n3, n4, n5)
 
     console.log(`Maior: ${maior}`)
     console.log(`Menor: ${menor}`)
 
 }
 main()
+/*
 function verificar_maior (a, b, c, d, e){
     if(a > b && a > c && a > d && a > e){
         return a
@@ -47,3 +50,4 @@ function verificar_menor (a, b, c, d, e){
         return e
     }
 }
+*/

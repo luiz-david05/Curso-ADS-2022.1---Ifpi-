@@ -2,16 +2,15 @@
 import {input} from '../../utils.js'
 
 function main(){
-    const numero = input('digite o número: ').split("").map(Number)
-    const resultado = igual_diferente(numero[0], numero[1])
-    console.log(`${resultado}`)    
+    const [n1, n2] = input('digite o número: ').split('').map(Number)
+    const verificar = igual_diferente(n1, n2)
+    if(verificar === true){
+        console.log(`${n1} != ${n2}`)
+    }else{
+    console.log(`${n1} = ${n2}`)
+    }
 }
 main()
 function igual_diferente (a, b){
-    if(a > b || b > a){
-        return 'diferentes!'
-    }
-    else{
-        return 'iguais!'
-    }
+    return a > b || b > a
 }

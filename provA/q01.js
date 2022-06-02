@@ -29,5 +29,4 @@ function faixas(n){
     }else if(fc_atual >= porcento_5 && fc_atual === fc_max){
         console.log(`Esforço máximo! \n limite: ${fc_max}`)
     }
-
 }

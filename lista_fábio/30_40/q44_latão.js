@@ -5,9 +5,15 @@ import {print, input} from '../../utils.js'
 function main(){
     //entradas
     const qtd = Number (input('digite a quantidade de latão em kg: '))
-    //processo
-    const qtd_cobre = qtd * 0.7
-    const qtd_zinco = qtd * 0.3
-    //saida
-    print(`${qtd.toFixed(1)} kg de latão equivalem a: ${qtd_cobre.toFixed(1)}% de cobre e ${qtd_zinco.toFixed(1)}% de zinco `)
+    //processo por meio de função
+    const latao =  percentual_latao(qtd)
 }main()
+function percentual_latao (valor){
+    let qtd_cobre = valor * (70 / 100)
+    let qtd_zinco = valor * (30 / 100)
+    if(valor > 1){
+    console.log(`${valor.toFixed(1)} kg de latão equivalem a: ${qtd_cobre.toFixed(1)} kg de cobre e ${qtd_zinco.toFixed(1)} kg de zinco `)
+    }else{
+    console.log(`${valor.toFixed(1)} kg de latão equivalem a: ${qtd_cobre.toFixed(1)} g de cobre e ${qtd_zinco.toFixed(1)} g de zinco `)
+    }
+}

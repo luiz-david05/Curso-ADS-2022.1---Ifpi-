@@ -3,15 +3,19 @@ import {input} from '../../utils.js'
 
 function main (){
     const n = Number (input('digite o número: '))
-    const primo = e_primo(n)
-    console.log(primo)
+    const primo = eh_primo(n)
+    if(primo === true){
+        console.log(`${n} é primo`)
+    }else{
+    console.log(`${n} não é primo`)
+    }
 }
 main()
-function e_primo (n){
-    if( n % n ===  1 && n % 1 === n ){
-        return 'é primo'
-    }
-    else{
-        return 'não é primo'
-    }
+function eh_primo (num) {
+    for (let i = 2; i < num; i++)
+        if (num % i === 0) {
+        return false
+        }
+    return num > 1
 }
+

@@ -3,11 +3,12 @@ import {print,input} from '../../utils.js'
 function main(){
     //entrada
     print(`digite um número de 3 dígitos.`)
-    const n = (input('digite o número: '))
+    const numero = Number(input('digite o número: '))
     //processo
-    const inverso = n.split('').reverse().join('')
-    const diferença = n - inverso
-    //saida
-    print(`diferença entre o número ${n} e seu inverso ${inverso} : ${diferença}`)
+    const reverso = valor => Number(valor.toString().split('').reverse().join('')) * Math.sign(valor)
+    const inverso = reverso(numero)
+    const dif =  numero - inverso
+    //saida 
+    console.log(`[${numero}] - [${inverso}] = [${dif}]`)
 
 }main()

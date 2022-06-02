@@ -3,19 +3,21 @@ import {input} from '../../utils.js'
 
 function main(){
     // entradas
-    const numeros = input('digite os 3 números: ').split(" ").map(Number)
-    const resultado = maior(numeros[0], numeros[1], numeros[2])
-    console.log(`\tmaior: ${resultado}`)
+    const numeros = input('digite os 3 números: ')
+    const [n1, n2, n3] = numeros.split(' ').map(Number)
+    // const maior = verificar_maior(n1, n2, n3)
+    let maior = Math.max(n1, n2, n3)
+    console.log(`maior = ${maior}`)
 }
 main()
-function maior (a, b, c){
-    if(a > b && a > c){
+/*
+function verificar_maior (a, b, c){
+    let maior = Math.max(a, b, c)
+    if(a === maior){
         return a
+    }else if( b === maior){
+        return b  
     }
-    else if (b > c && b > a){
-        return b
-    }
-    else if (c > b && c > a){
-        return c
-    }
+    return c
 }
+*/
