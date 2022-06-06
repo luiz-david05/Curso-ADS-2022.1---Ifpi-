@@ -1,4 +1,6 @@
-import {input} from '../utils.js'
+import fs from 'fs';
+const input = fs.readFileSync('1114.txt', 'utf8')
+var lines = input.split('\n');
 
 function main(){
     let i = 0
