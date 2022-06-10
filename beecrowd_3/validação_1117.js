@@ -1,23 +1,31 @@
 import fs from 'fs';
 const input = fs.readFileSync('1117.txt', 'utf8')
-var lines = input.split('\n');
+const lines = input.split('\n');
 
 function main(){
-let media
-let num1 = Number(lines[0])
-let num2 = Number(lines[1])
-let i = 0
-while(num1 < 0 || num1 > 10){
+    let nota_valida = 0
+    let i = 0
+    let nota = Number(lines[i ++])
+    let media= 0
+    let count = 0
+    while(nota > 10 || nota < 0){
         console.log('nota invalida')
-        num1 = Number(lines[i ++])
-        i ++
-}
-while(num2 < 0 || num2 > 10){
+        nota = Number(lines[i ++])
+        if(nota <= 10 && nota >= 0){
+            nota_valida += nota
+            count ++
+        }
+    }
+    let nota_2 = Number(lines[i ++])
+    while(nota_2 > 10 || nota < 0){
         console.log('nota invalida')
-        num1 = Number(lines[i ++])
-        i ++
-}
-media = (num1 + num2) / 2
-console.log(`media = ${media.toFixed(2)}`)
+        nota_2 = Number(lines[i ++])
+        if(nota_2 <= 10 && nota_2 >= 0){
+            nota_valida += nota_2
+            count ++
+        }
+    }
+    media = nota_valida / count
+    console.log(`media = ${media.toFixed(2)}`)
 }
 main()

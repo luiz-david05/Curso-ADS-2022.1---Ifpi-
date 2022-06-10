@@ -1,20 +1,19 @@
 import fs from 'fs';
-const input = fs.readFileSync('1131.txt', 'utf8')
-var lines = input.split('\n');
+const input = fs.readFileSync('1116.txt', 'utf8')
+const lines = input.split('\n');
 
 function main(){
-    let qtd, i
-    let n = 0
-    qtd = Number(lines[i++])
-    while(qtd > n){
-        let [x, y] = lines[i++].split(' ').map(Number)
+    let qtd_pares = Number(lines[0])
+    for(let i = 0; i < qtd_pares; i++){
+        let [x, y] = lines[i + 1].split(' ').map(Number)
+        let divisao = 0
         if(y === 0){
-            console.log('divisao impossivel')
+            console.log(`divisao impossivel`)
         }else{
-            let div = x / y
-            console.log(div.toFixed(1))
+            divisao = x / y
+            console.log(divisao.toFixed(1))
         }
-        n ++ 
     }
 }
 main()
+
