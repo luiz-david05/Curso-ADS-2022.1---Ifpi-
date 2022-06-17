@@ -3,29 +3,18 @@ const input = fs.readFileSync('1117.txt', 'utf8')
 const lines = input.split('\n');
 
 function main(){
-    let nota_valida = 0
     let i = 0
-    let nota = Number(lines[i ++])
-    let media= 0
-    let count = 0
-    while(nota > 10 || nota < 0){
+    let a = Number(lines[i++])
+    while(a < 0 || a > 10){
         console.log('nota invalida')
-        nota = Number(lines[i ++])
-        if(nota <= 10 && nota >= 0){
-            nota_valida += nota
-            count ++
-        }
+        a = Number(lines[i++])
     }
-    let nota_2 = Number(lines[i ++])
-    while(nota_2 > 10 || nota < 0){
+    let b = Number(lines[i++])
+    while(b < 0 || b > 10){
         console.log('nota invalida')
-        nota_2 = Number(lines[i ++])
-        if(nota_2 <= 10 && nota_2 >= 0){
-            nota_valida += nota_2
-            count ++
-        }
+        b = Number(lines[i++])
     }
-    media = nota_valida / count
+    let media = (a + b) / 2
     console.log(`media = ${media.toFixed(2)}`)
-}
+}   
 main()
