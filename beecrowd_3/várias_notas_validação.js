@@ -19,26 +19,27 @@ function main(){
 
     console.log('novo calculo (1-sim 2-nao)')
     let x = Number(lines[i++])
-    while(x > 2 || x < 1){
+    while(x !== 2){
+        if(x > 1 || x < 1){
         console.log('novo calculo (1-sim 2-nao)')
         x = Number(lines[i++])
-    }
-    let c = Number(lines[i++])
-    while(c < 0 || c > 10){
+        }else{
+            let c = Number(lines[i++])
+        while(c < 0 || c > 10){
         console.log('nota invalida')
         c = Number(lines[i++])
-    }
-    let d = Number(lines[i++])
-    while(d < 0 || d > 10){
+        }
+        let d = Number(lines[i++])
+        while(d < 0 || d > 10){
         console.log('nota invalida')
         d = Number(lines[i++])
-    }
-    media = (c + d) / 2
-    console.log(`media = ${media.toFixed(2)}`)
-    console.log('novo calculo (1-sim 2-nao)')
-    x = Number(lines[i++])
-    while(x < 1 || x > 2){
+        }
+        media = (c + d) / 2
+        console.log(`media = ${media.toFixed(2)}`)
+        console.log('novo calculo (1-sim 2-nao)')
         x = Number(lines[i++])
+        }
     }
+    
 }   
 main()
