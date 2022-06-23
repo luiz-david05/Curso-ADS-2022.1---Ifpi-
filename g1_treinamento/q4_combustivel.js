@@ -9,7 +9,7 @@ function main(){
     const distancia = Number(lines[i++]) 
     const [litro_alcool, litro_gasolina] = lines[i++].split(' ').map(Number)
     const valor_alcool = calcular_valor(rendimento_alcool, distancia, litro_alcool)
-    const valor_gasolina = calcular_valor(rendimento_alcool, distancia, litro_gasolina)
+    const valor_gasolina = calcular_valor(rendimento_gasolina, distancia, litro_gasolina)
     console.log(`Valor se usar álcool: R$ ${valor_alcool.toFixed(2)}`)
     console.log(`Valor se usar gasolina: R$ ${valor_gasolina.toFixed(2)}`)
 }
