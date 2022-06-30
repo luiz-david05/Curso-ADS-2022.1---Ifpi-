@@ -64,3 +64,9 @@ export function juncao_vetor(tamanho, vetor_a, vetor_b, vetor_c){
     }
     return vetor_c
 }
+
+export function intersecao_vetor(vetor_a, vetor_b){
+    const vetor_d = vetor_a.filter(i => vetor_b.includes(i))
+
+    return vetor_d
+}
