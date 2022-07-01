@@ -1,10 +1,9 @@
-import fs from  'fs';
-import { inteirosPares } from './funcoes_utils.js';
-const input = fs.readFileSync('q2.txt', 'utf8')
-const lines = input.split('\n');
+import { input } from '../utils.js'
+import { inteirosPares } from './funcoes_utils.js'
+
 
 function main(){
-    const n = Number(lines[0])
-    const pares = inteirosPares(n)
+    const n = Number(input('Número: '))
+    inteirosPares(n)
 }
 main()
