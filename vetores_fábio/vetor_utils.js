@@ -1,6 +1,4 @@
-import fs from 'fs'
-const input = fs.readFileSync('q2.txt', 'utf8')
-const lines = input.split('\n');
+import {input} from '../utils.js'
 
 export function novo_vetor(tamanho){
     return new Array(tamanho)
@@ -23,7 +21,7 @@ export function exibir_vetor(vetor){
 
 export function preencher_vetor(vetor){
     for(let i = 0; i < vetor.length; i++){
-        vetor[i] = Number(lines[i+1])
+        vetor[i] = Number(input('> '))
     }
     return vetor
 }
@@ -70,3 +68,91 @@ export function intersecao_vetor(vetor_a, vetor_b){
 
     return vetor_d
 }
+
+
+export function menorElemento(vetor){
+   let menor  = vetor[0], posicao = 0
+   
+   for (let i = 0; i < vetor.length; i++){
+    if (vetor[i] < menor){
+        menor = vetor[i]
+        posicao = i
+    }
+    return [menor, posicao]
+   }
+}
+
+export function maiorElemento(vetor){
+    let maior = vetor[0], posicao = 0
+
+    for (let i = 0; i < vetor.length; i++){
+        if (vetor[i] > maior){
+            maior = vetor[i]
+            posicao = i
+        }
+    }
+    return [maior, posicao]
+}
+
+export function media(vetor){
+    let qtd = vetor.length, soma = 0
+
+    for ( let i = 0; i < qtd; i++){
+        soma += vetor[i]
+    }
+
+    let media = soma / qtd
+
+    console.log(`Média dos valores do vetor = ${media.toFixed(2)}`)
+}
+
+export function somarTodos(vetor){
+    let soma = 0
+
+    for (let i = 0; i < vetor.length; i++){
+        soma += vetor[i]
+    }
+
+    console.log(`Soma de todos os elementos no vetor = ${soma}`)
+}
+
+export function adicionar_item_vetor(vetor, posicao, item) {
+    const novoVetor = novo_vetor(vetor.length + 1)
+    for (let i = 0, j = 0; i < novoVetor.length; i++) {
+        if (i === posicao) {
+            novoVetor[i] = item
+        } else {
+            novoVetor[i] = vetor[j]
+            j++
+        }
+    }
+
+    return novoVetor
+}
+
+export function vetor_push(vetor, item) {
+    return adicionar_item_vetor(vetor, vetor.length, item)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
